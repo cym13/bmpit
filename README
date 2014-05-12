@@ -1,0 +1,56 @@
+Description
+===========
+
+bmpit allows one to generate an image from any file by prepending a (mostly)
+valid bmp header to it.
+
+This allows further interpretation of the content of the file. For exemple,
+strings are easily spotted by looking for zones with 1-pixel wide vertical
+lines, whereas html parts are shown by "waves" fluctuating in a zone.
+
+It's actually kind of cool to discover it yourself ;)
+
+For further interpretation see: http://crucialsecurityblog.harris.com/
+
+Usage
+=====
+
+Usage: bmpit.py [-h] [-H height] [-W width] [-o offset] INPUT [OUTPUT]
+
+Arguments:
+    INPUT            The file to bmp
+    OUTPUT           Output file, default is it.bmp
+
+Options:
+    -h, --help       Print this help and exit
+    -H height        Height in pixel
+    -W width         Width in pixel
+    -o offset        Offset reading the source file in bytes
+
+Warning
+=======
+
+It does not work very well on big files such as videos, you may see a black
+part at the beginning that seems endless. If that happens, you can try
+playing with the width of the image.
+
+Dependencies
+============
+
+Docopt  (https://github.com/docopt/docopt) It is available on pypi.
+
+License
+=======
+
+This program is under the GPLv3 License.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+Author
+======
+
+Main developper: Cédric Picard
+Email:           cedric.picard@efrei.net
+Twitter:         @Cym13
+GPG:             383A 76B9 D68D 2BD6 9D2B  4716 E3B9 F4FE 5CED 42CB
